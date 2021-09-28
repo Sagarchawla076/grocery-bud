@@ -1,0 +1,65 @@
+:root {
+  --color-grey-main: #f1f5f8;
+  --color-white: #fff;
+  --color-grey2: #102a42;
+  --color-grey3: #617d98;
+  --color-label: #063251;
+  --color-btn: #a5d5f8;
+  --color-btn-hover: #49a6e9;
+  --color-para: #617d98;
+  --color-black: #333333;
+  --color-danger: #ff9999;
+  --color-succes: #99cc99;
+}
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint==tab-land) {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if ($breakpoint==tab-port) {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if ($breakpoint==phone) {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if ($breakpoint==phone-s) {
+    @media (max-width: 18.75em) {
+      @content;
+    }
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  @include respond(tab-port) {
+    font-size: 60%;
+  }
+  @include respond(phone) {
+    font-size: 50%;
+  }
+  @include respond(phone) {
+    font-size: 45%;
+  }
+}
+body {
+  background-color: var(--color-grey-main);
+  font-size: 2.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

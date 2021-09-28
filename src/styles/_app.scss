@@ -1,0 +1,122 @@
+.container {
+  width: 42vw;
+  background-color: var(--color-white);
+  transform: translateY(-10rem);
+  box-shadow: 0rem 0.7rem 3rem rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+  transition: width 0.1s;
+  @include respond(tab-land) {
+    width: 55vw;
+  }
+  @include respond(tab-port) {
+    width: 65vw;
+  }
+  @include respond(phone) {
+    width: 80vw;
+  }
+  @include respond(phone-s) {
+    width: 90vw;
+  }
+}
+
+.heading {
+  text-transform: capitalize;
+  letter-spacing: 1.5px;
+  color: var(--color-black);
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.1rem;
+  &__input {
+    width: 80%;
+    padding: 0.6rem 0;
+    border: none;
+    background-color: var(--color-grey-main);
+
+    &::placeholder {
+      padding: 1rem;
+      font-size: 1.8rem;
+    }
+  }
+  &__btn {
+    background-color: var(--color-btn);
+    border: none;
+    padding: 0.6rem 1.3rem;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 0rem 0.2rem 2rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    &:active {
+      transform: translateY(0.2rem);
+      box-shadow: 0rem 0.4rem 2rem rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.danger {
+  background-color: var(--color-danger);
+  color: #721c24;
+}
+.success {
+  background-color: var(--color-succes);
+}
+.alert {
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  padding: 0.3rem 0;
+}
+.clear {
+  border: none;
+  color: var(--color-danger);
+  font-size: 1.6rem;
+  letter-spacing: 1.2px;
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+.grocery-container {
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+  letter-spacing: 1.5px;
+  font-size: 1.5rem;
+  &__item {
+    display: flex;
+    justify-content: space-between;
+
+    &--title {
+      text-transform: capitalize;
+    }
+    &--icons {
+      display: flex;
+      gap: 1rem;
+      & > * {
+        cursor: pointer;
+      }
+      .edit {
+        color: var(--color-succes);
+      }
+      .delete {
+        color: var(--color-danger);
+      }
+    }
+  }
+}
